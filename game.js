@@ -8,11 +8,24 @@ var level = 0;
 
 $(document).keypress(function () {
   if (!started) {
+    handleUserInput();
+  }
+});
+
+$("body").click(function () {
+  if (!started) {
+    handleUserInput();
+  }
+});
+
+
+function handleUserInput() {
+  if (!started) {
     $("#level-title").text("Level " + level);
     nextSequence();
     started = true;
   }
-});
+}
 
 $(".btn").click(function () {
 
